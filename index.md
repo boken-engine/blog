@@ -1,7 +1,5 @@
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="/blog{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+# Posts
+
+{% for post in site.posts %}
+- {{ post.date | date_to_string }}: [{{ post.title }}]({{ post.url | relative_url }})
+{% endfor %}
